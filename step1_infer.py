@@ -8,28 +8,16 @@ import re
 from tqdm import tqdm
 import copy
 
-def parse_json_string(json_string, is_test = True, is_utterance=False):
-    # 定义正则表达式模式以逐个匹配所需字段
+def parse_json_string(json_string):
     patterns = {
         "person": r'"?person"?\s*:\s*"([^"]+)"',
         "content": r'"?content"?\s*:\s*"([^"]+)"'
-    } if is_test else{
-        "person": r'"person"\s*:\s*"([^"]+)"',
-        "intent": r'"intent"\s*:\s*"([^"]+)"',
-        "sentiment": r'"sentiment"\s*:\s*"([^"]+)"',
-        "emotion": r'"emotion"\s*:\s*"([^"]+)"',
-        "stance": r'"stance":\s*(\[[^\]]*?\]),\s*',
-        "strategy": r'"strategy":\s*(\{[^\}]*?\})',  
-        "content": r'"content"\s*:\s*"([^"]+)"'
     }
-
-    # 初始化结果列表
     dialogue_dict = {}
-    # 逐个应用正则表达式提取信息
     for key, pattern in patterns.items():
         match = re.search(pattern, json_string)
         if match:
-            value = match.group(1).strip()  # strip()用于去除前后的空白字符
+            value = match.group(1).strip()
             dialogue_dict[key] = value
         else:
             print(f"Failed to extract {key}")
@@ -178,7 +166,6 @@ def dg_result_process(dialogue_hs, datas, output_path):
     with open(output_path, 'w', encoding='utf-8') as fw:
         for i, dialogue in enumerate(dialogue_hs):
             if dialogue: 
-                # 如果有对话历史
                 final_dialogues = {
                     'uuid': datas[i]['uuid'],
                     'id': i,
@@ -194,7 +181,7 @@ def dg_result_process(dialogue_hs, datas, output_path):
                     'familiarity': datas[i]['combine']['familiarity'],
                     'goal1': datas[i]['goal'][0],
                     'goal2': datas[i]['goal'][1],
-                    'dialogue': dialogue[-1]  # 获取最后一个对话历史，即完整对话
+                    'dialogue': dialogue[-1]
                 }
                 fw.write(json.dumps(final_dialogues, ensure_ascii=False) + '\n') 
 
@@ -244,11 +231,11 @@ def main(args):
         dg_result_process(dialogue_hs, datas, final_output_path)
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='args for persona_gen.py')
+    parser = argparse.ArgumentParser(description='args for step1_infer.py')
     parser.add_argument("--bench_path", type=str, default="data/generation/DIALOG/1109_500_test_zh_final.jsonl")
     parser.add_argument("--config_path", type=str, default="config/qwen2_7b.yaml")
-    parser.add_argument("--data", type=str, default="output/1109qwen2_7b_dpo")
-    parser.add_argument("--output_path", type=str, default="last_result")
+    parser.add_argument("--data", type=str, default="output/1109qwen2_7b")
+    parser.add_argument("--output_path", type=str, default="result")
     parser.add_argument("--output_file", type=str, default="cg_zh_infer.jsonl")
     parser.add_argument("--process_num", type=int, default=50)             
     parser.add_argument("--tag", type=str, default="INFER")

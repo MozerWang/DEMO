@@ -26,4 +26,41 @@ This repository contains code for our paper DEMO: Reframing Dialogue Interaction
 
 ## 🔥 Update
 
-- [xx/xx]🔥DEMO is coming! We release the [paper](https://arxiv.org/pdf/xxx), [code](https://github.com/MozerWang/DEMO), [models](https://huggingface.co/models/), and [data](https://huggingface.co/datasets) for dialogue elment modeling!
+- [2024.12.07]🔥DEMO is coming! We release the [paper](https://arxiv.org/pdf/xxx), [code](https://github.com/MozerWang/DEMO), [models](https://huggingface.co/models/), and [data](https://github.com/MozerWang/DEMO) for dialogue elment modeling!
+
+## 🔧How to use
+**Step1** Download DEMO and unzip data
+```shell
+git clone https://github.com/MozerWang/DEMO.git
+cd DEMO
+unzip data/DEMO.zip -d data/
+```
+
+**Step2** Create a conda environment and Install other dependencies.
+```shell
+conda create --name loong python=3.9 -y
+conda activate DEMO
+pip install -r requirements.txt
+```
+
+**Step3** Preparing the Model
+
+1. (**Must**) Set up your OPENAI key in config/gpt_4o.yaml
+```shell
+api_key: "Your OPENAI key"
+```
+2. If you are using API-based LLM
+```shell
+# Firstly, Set up your key in config/*.yaml
+api_key: "Your API key"
+```
+3. If you are using Open-sourced LLM
+```shell
+# We recommend using vLLM. And we use HTTP server that implements OpenAI’s Completions and Chat API.
+# Set up your vLLM settings in config/*.yaml
+```
+
+**Step4** Evaluate
+```shell
+sh run.sh
+```

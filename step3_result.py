@@ -157,8 +157,8 @@ def main(args):
     print(f"successful num: {success_num}")
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='args for persona_gen.py')
-    parser.add_argument("--result_path", type=str, default="new_eval_da/eval/1109qwen2_72b")
+    parser = argparse.ArgumentParser(description='args for step3_result.py')
+    parser.add_argument("--result_path", type=str, default="result/eval/qwen2_7b")
     parser.add_argument("--tag", type=str, default="eval")
     args = parser.parse_args()
     print(json.dumps(vars(args), indent=4))

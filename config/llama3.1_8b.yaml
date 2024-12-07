@@ -1,0 +1,13 @@
+type: "OpenAI"
+args:
+  api_name: "LLaMA3.1-8B-Instruct"
+  api_key: ""  
+  api_url: ""
+ckpt: ""
+gpu_memory_utilization: 0.95
+tensor_parallel_size: 4
+enable_prefix_caching: ""
+max_tokens: 8192
+lora: ""
+run_args:
+  temperature: 1.0

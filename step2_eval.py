@@ -101,11 +101,11 @@ def main(args):
     print('Finish!!')
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='args for persona_gen.py')
+    parser = argparse.ArgumentParser(description='args for step2_eval.py')
     parser.add_argument("--result_path", type=str, default="final_result/output/1104qwen2_7b_self/ca_en_infer_extract.jsonl")
     parser.add_argument("--config_path", type=str, default="config/gpt_4o.yaml")
     parser.add_argument("--data", type=str, default="eval/1104qwen2_7b_self")
-    parser.add_argument("--output_path", type=str, default="final_result")
+    parser.add_argument("--output_path", type=str, default="result")
     parser.add_argument("--output_file", type=str, default="ca_en_eval.jsonl")
     parser.add_argument("--process_num", type=int, default=1)             
     parser.add_argument("--tag", type=str, default="eval")
