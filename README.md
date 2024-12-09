@@ -26,7 +26,7 @@ This repository contains code for our paper DEMO: Reframing Dialogue Interaction
 
 ## 🔥 Update
 
-- [2024.12.07]🔥DEMO is coming! We release the [paper](https://arxiv.org/pdf/xxx), [code](https://github.com/MozerWang/DEMO), [models](https://huggingface.co/models/), and [data](https://github.com/MozerWang/DEMO) for dialogue elment modeling!
+- [2024.12.07]🔥DEMO is coming! We release the [paper](https://arxiv.org/abs/2412.04905), [code](https://github.com/MozerWang/DEMO), [models]([https://huggingface.co/models/](https://huggingface.co/iiiiwis/DEMO_Agent)), and [data](https://github.com/MozerWang/DEMO) for dialogue elment modeling!
 
 ## 🔧How to use
 **Step1** Download DEMO and unzip data
@@ -59,8 +59,20 @@ api_key: "Your API key"
 # We recommend using vLLM. And we use HTTP server that implements OpenAI’s Completions and Chat API.
 # Set up your vLLM settings in config/*.yaml
 ```
-
 **Step4** Evaluate
 ```shell
 sh run.sh
 ```
+## Citation
+```
+@article{wang2024demo,
+      title={DEMO: Reframing Dialogue Interaction with Fine-grained Element Modeling}, 
+      author={Minzheng Wang and Xinghua Zhang and Kun Chen and Nan Xu and Haiyang Yu and Fei Huang and Wenji Mao and Yongbin Li},
+      year={2024},
+      journal={arXiv preprint arXiv:2412.04905},
+      url={https://arxiv.org/abs/2412.04905},
+      year={2023}
+}
+```
+
+
