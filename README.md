@@ -1,5 +1,9 @@
 # DEMO: Reframing Dialogue Interaction with Fine-grained Element Modeling
 
+<p align="center">
+    <img src="src/system.png" width="40%" height="50%">
+</p>
+
 <div align="center">
 <br>
 <a href="https://scholar.google.com.hk/citations?user=glV21ZsAAAAJ&hl=zh-CN">Minzheng Wang</a><sup><span>1,2</span></sup>, 
@@ -19,7 +23,10 @@
 <sup>2</sup> MAIS, Institute of Automation, Chinese Academy of Sciences<br>
 <sup>3</sup> Tongyi Lab, Alibaba Group<br>
 
+<font size=3><div align='center' >  [[📖 arXiv Paper](https://arxiv.org/abs/2412.04905)] [[📊 Dataset](https://github.com/MozerWang/DEMO)] [[🏆 Models](https://huggingface.co/iiiiwis/DEMO_Agent)]  </div></font>
+
 </div>
+
 
 ## 👀 Overview
 This repository contains code for our paper DEMO: Reframing Dialogue Interaction with Fine-grained Element Modeling. We systematically construct the dialogue framework from the *Prelude* through the *Interlocution* to the *Epilogue* and define an innovative research task: **D**ialogue **E**lement **MO**deling. Furthermore, we introduce a tailor-designed benchmark **DEMO** to facilitate comprehensive dialogue modeling and assessment. Concretely, our proposed task focuses on two core competencies of models: (1) **Element Awareness**, which entails reverse engineering to decompose dialogue elements, and (2) **Dialogue Agent Interaction**, which involves goal-directed multi-turn dialogue modeling driven by elements. We meticulously design a data synthesis framework, contributing to a novel benchmark for dialogue modeling that encompasses multifaceted elements applicable to both English and Chinese. Besides, inspired by imitation learning, we amass a substantial collection of expert experiences and build a DEMO agent endowed with dialogue element modeling.
