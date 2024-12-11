@@ -77,8 +77,7 @@ sh run.sh
       author={Minzheng Wang and Xinghua Zhang and Kun Chen and Nan Xu and Haiyang Yu and Fei Huang and Wenji Mao and Yongbin Li},
       year={2024},
       journal={arXiv preprint arXiv:2412.04905},
-      url={https://arxiv.org/abs/2412.04905},
-      year={2023}
+      url={https://arxiv.org/abs/2412.04905}
 }
 ```
 
